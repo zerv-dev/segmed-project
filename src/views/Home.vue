@@ -1,18 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+     <input v-model="searchQuery" placeholder="edit me">
+    <p>{{searchQuery}}</p>
+    <ReportsList :searchQuery="searchQuery" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-
+import ReportsList from '@/components/ReportsList.vue'
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    HelloWorld,
+    ReportsList,
+  },
+  data:function () {
+    return {
+      searchQuery:''
+    
+    }
   }
 }
 </script>
