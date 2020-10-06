@@ -11,13 +11,9 @@
       <li class="nav-item active">
         <router-link to="/" class="nav-link" href="#">Home <span class="sr-only">(current)</span></router-link>
       </li>
-      
-      
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input style="width:500px" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" v-model="searchQuery" @submit.prevent="submitSearch">
-      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" @click.prevent="submitSearch">Search</button> -->
-
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" @click.prevent="submitSearch">Search</button>
     </form>
   </div>
@@ -39,9 +35,9 @@ export default {
           if(this.searchQuery===''){
             return
           }
-            console.log(this.searchQuery.split(' ').join('+'))
-            this.$store.commit('SET_SEARCH_QUERY',this.searchQuery)
-            this.$router.push('/search/'+this.searchQuery)
+                    
+          this.$store.commit('SET_SEARCH_QUERY',this.searchQuery)
+          this.$router.push('/search/'+this.searchQuery)
 
         }
     },

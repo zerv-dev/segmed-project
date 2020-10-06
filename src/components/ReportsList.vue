@@ -1,11 +1,9 @@
 <template>
     <div class="row">
         <div class="col">
-            <!-- <div class="col"> -->
                 <span class=" float-left p-1 ml">ID</span>
                 <span class=" float-left p-1 ml-2">Report</span>
-                <span class="p-1 ml-5 float-left">Text</span>
-            <!-- </div> -->
+                <span class="p-1 ml-5 float-left">Text</span>            
         </div>
 
         <div v-if="getReportsBySearchQuery" class="col justify-content-center  ">
@@ -32,8 +30,7 @@
                         :key="index"
                         class="badge "
                         :class="tag === 'goodreport'? 'badge-success' : 'badge-danger'"
-                        >#{{ tag }}</span
-                    >
+                    >#{{ tag }}</span>
                     {{ "  " + report.text }}
                 </router-link>
             </transition-group>

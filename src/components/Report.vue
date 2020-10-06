@@ -1,26 +1,24 @@
 <template>
   <div class="row">
+    <h1 class="col-12 mb-3">Report {{reportId}}</h1>
     <div class="col">{{ getReportById(this.$route.params.id).text }}</div>
     <div class="col">
       <p>Click on the tag that you want to change </p>
       <div class="row">
         <div class="col">
-          <p> Active tags</p>
+          <strong> Active tags</strong>
           <ul>
-
               <li 
               v-for ="(tag,index) in activeTags" :key="index"  
-              class="badge d-block" :class="(tag === 'goodreport') ? 'badge-success' : 'badge-danger'" 
+              class="badge d-block my-2" :class="(tag === 'goodreport') ? 'badge-success' : 'badge-danger'" 
               @click="removeTag(tag)"
               >#{{tag}}</li>
           </ul>
         </div>
-      <!-- </div>
-      <div class="row"> -->
           <div class="col">
-            <p> Tnactive tags</p>
+            <strong> Inactive tags</strong>
             <ul>
-              <li v-for ="(tag,index) in inactiveTags" :key="index"  class="badge d-block" @click="addTag(tag)" :class="(tag === 'goodreport') ? 'badge-success' : 'badge-danger'" >#{{tag}}</li>
+              <li v-for ="(tag,index) in inactiveTags" :key="index"  class="badge d-block my-2" @click="addTag(tag)" :class="(tag === 'goodreport') ? 'badge-success' : 'badge-danger'" >#{{tag}}</li>
             </ul>
           </div>
 
@@ -40,9 +38,6 @@ export default {
           'conditionpresent'
       ],
     };
-  },
-  mounted() {
-    console.log(this.$route.params);
   },
   computed: {
     ...mapGetters(["getReportById"]),

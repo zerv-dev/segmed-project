@@ -14,7 +14,6 @@ export default{
         let report = state.reports.find((report)=>{
             return report.id == reportId
         })
-        console.log(report)
         let index = report.activeTags.indexOf(tag)
         report.activeTags.splice(index,1)
     }

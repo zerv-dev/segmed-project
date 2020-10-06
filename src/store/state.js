@@ -1,4 +1,5 @@
 export default{
+    searchQuery:'',
     reports:[
         {
           "id": 1,
@@ -250,6 +251,5 @@ export default{
           "text": "Ipsum sit elit duis amet aliqua. Est do nisi commodo nisi nulla tempor consequat elit irure aliqua ad mollit enim. Adipisicing nulla velit Lorem sit laborum cupidatat qui commodo officia. Deserunt magna reprehenderit cupidatat qui duis. Reprehenderit id ex elit nostrud. Ad adipisicing consectetur officia cupidatat nostrud magna commodo. Dolore fugiat pariatur ut eu irure laborum ut id.\r\n",
           "activeTags": []
         },
-      ],
-    searchQuery:''
+      ]
 }
