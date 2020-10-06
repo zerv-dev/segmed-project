@@ -2,7 +2,7 @@
   <div class="home">
      <input v-model="searchQuery" placeholder="edit me">
     <p>{{searchQuery}}</p>
-    <ReportsList :searchQuery="searchQuery" />
+    <ReportsList  />
   </div>
 </template>
 
@@ -15,6 +15,7 @@ export default {
   components: {
     HelloWorld,
     ReportsList,
+
   },
   data:function () {
     return {

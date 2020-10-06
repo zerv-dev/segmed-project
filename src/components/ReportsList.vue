@@ -1,17 +1,26 @@
 <template>
-    <div>
-        <transition-group tag="ul" name="component-fade" mode="out-in">
-            <li class="row" v-for="report in filteredLists" :key="report.id">{{'Report '+report.id + '----' + report.text}}</li>
+    <div class="container">
+        <div class="row">
+            <transition-group tag="div" name="component-fade" mode="out-in" class="list-group"> 
+            <router-link :to="`/report/${report.id}`" class="list-group-item list-group-item-action" v-for="report in getReportsBySearchQuery" :key="report.id">{{'Report '+report.id + '----' + report.text}}</router-link>
         </transition-group >
+        </div>
+        
     </div>
 </template>
 <script>
+import {mapState, mapGetters} from "vuex"
+
 export default {
     name:'ReportsList',
-    props:['searchQuery'],
+    // props: {
+    //   searchQuery: {
+    //     type: String,
+    //     default: ''
+    //   }},
     data : function(){
         return {
-            reports:[
+            dataReports:[
                 {
                     id:1,
                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -28,11 +37,9 @@ export default {
         }
     },
     computed:{
-        filteredLists:function () {
-            return this.reports.filter((report)=>{
-                return this.searchQuery.toLowerCase().split(' ').every((term) => report.text.toLowerCase().includes(term))
-            })
-        }
+        // ...mapState(['searchQuery','reports']),
+        ...mapGetters(['getReportsBySearchQuery']),
+      
     }
 }
 </script>
