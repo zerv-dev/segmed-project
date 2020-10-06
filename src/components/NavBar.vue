@@ -34,9 +34,6 @@ export default {
         searchQuery:''
       }
     },
-    // computed: {
-    //     ...mapState(['searchQuery'])
-    // },
     methods:{
         submitSearch(e){
           if(this.searchQuery===''){
@@ -45,6 +42,7 @@ export default {
             console.log(this.searchQuery.split(' ').join('+'))
             this.$store.commit('SET_SEARCH_QUERY',this.searchQuery)
             this.$router.push('/search/'+this.searchQuery)
+            this.searchQuery= ''
 
         }
     }

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1>Searching for {{searchQuery}}</h1>
         <ReportsList />  
     </div>
 </template>

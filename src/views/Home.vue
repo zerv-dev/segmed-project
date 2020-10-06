@@ -22,6 +22,10 @@ export default {
       searchQuery:''
     
     }
-  }
+
+  },
+  mounted() {
+    this.$store.commit('SET_SEARCH_QUERY',this.searchQuery)
+  },
 }
 </script>

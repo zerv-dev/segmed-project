@@ -1,8 +1,17 @@
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center  " >
             <transition-group tag="div" name="component-fade" mode="out-in" class="list-group"> 
-            <router-link :to="`/report/${report.id}`" class="list-group-item list-group-item-action" v-for="report in getReportsBySearchQuery" :key="report.id">{{'Report '+report.id + '----' + report.text}}</router-link>
+            <router-link :to="`/report/${report.id}`" style="  white-space: nowrap;overflow-x: hidden;width: 35rem;text-overflow: ellipsis;" class="list-group-item list-group-item-action " v-for="report in getReportsBySearchQuery" :key="report.id">
+                {{'Report '+report.id }}
+                <span 
+                v-for ="(tag,index) in report.activeTags" :key="index"  
+                class="badge " :class="(tag === 'goodreport') ? 'badge-success' : 'badge-danger'" 
+              
+                >#{{tag}}</span>
+                {{   '  ' + report.text}}
+                
+            </router-link>
         </transition-group >
         </div>
         
@@ -37,7 +46,6 @@ export default {
         }
     },
     computed:{
-        // ...mapState(['searchQuery','reports']),
         ...mapGetters(['getReportsBySearchQuery']),
       
     }
