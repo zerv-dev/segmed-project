@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
-     <input v-model="searchQuery" placeholder="edit me">
-    <p>{{searchQuery}}</p>
+  <div class="home container">
+    <H1 class="mb-5 mt-3">All the reports</H1>
+
     <ReportsList  />
   </div>
 </template>
@@ -17,15 +17,8 @@ export default {
     ReportsList,
 
   },
-  data:function () {
-    return {
-      searchQuery:''
-    
-    }
-
-  },
   mounted() {
-    this.$store.commit('SET_SEARCH_QUERY',this.searchQuery)
+    this.$store.commit('SET_SEARCH_QUERY','')
   },
 }
 </script>

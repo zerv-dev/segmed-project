@@ -2,9 +2,10 @@
   <div class="row">
     <div class="col">{{ getReportById(this.$route.params.id).text }}</div>
     <div class="col">
+      <p>Click on the tag that you want to change </p>
       <div class="row">
         <div class="col">
-          <p> inactive tags</p>
+          <p> Active tags</p>
           <ul>
 
               <li 
@@ -17,7 +18,7 @@
       <!-- </div>
       <div class="row"> -->
           <div class="col">
-            <p> inactive tags</p>
+            <p> Tnactive tags</p>
             <ul>
               <li v-for ="(tag,index) in inactiveTags" :key="index"  class="badge d-block" @click="addTag(tag)" :class="(tag === 'goodreport') ? 'badge-success' : 'badge-danger'" >#{{tag}}</li>
             </ul>

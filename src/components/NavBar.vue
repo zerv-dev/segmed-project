@@ -42,9 +42,20 @@ export default {
             console.log(this.searchQuery.split(' ').join('+'))
             this.$store.commit('SET_SEARCH_QUERY',this.searchQuery)
             this.$router.push('/search/'+this.searchQuery)
-            this.searchQuery= ''
 
         }
+    },
+    computed:{
+      routeHasSearch(){
+        return this.$route
+      }
+    },
+    watch: {
+    $route(to, from) {
+      if(!to.path.includes('search') && from.path.includes('search')){
+            this.searchQuery= ''
+      } 
     }
+  }
 }
 </script>

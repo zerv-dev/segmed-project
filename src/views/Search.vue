@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <h1>Searching for {{searchQuery}}</h1>
         <ReportsList />  
     </div>
@@ -14,10 +14,8 @@ export default {
     },
     
     created() {
-        console.log('ooo')
         if(!(this.$route.params.searchQuery)){
             this.$router.push('/')
-           
         }
     },
     computed: {

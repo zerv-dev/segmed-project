@@ -8,3 +8,18 @@
     opacity: 0;
     transform: translateX(30px);
   }
+
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+
+  .reports-list-item{
+  white-space: nowrap;
+  overflow-x: hidden;
+  width: 35rem;
+  text-overflow: ellipsis
+  }
